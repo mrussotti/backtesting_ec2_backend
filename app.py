@@ -1,20 +1,10 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 
 app = Flask(__name__)
 
-# Secure CORS configuration
-CORS(app, resources={
-    r"/test": {
-        "origins": [
-            "http://localhost:5173",  # Development frontend
-            "https://main.d1kze5vw3hqljr.amplifyapp.com/quantum/"  # Production frontend
-        ],
-        "methods": ["GET"],
-        "allow_headers": ["Content-Type", "Authorization"],
-        "max_age": 3600  # Cache preflight requests for 1 hour
-    }
-}, supports_credentials=True)
+# Restrict CORS to API Gateway
+CORS(app, resources={r"/*": {"origins": "https://x91quab646.execute-api.us-east-1.amazonaws.com"}})
 
 @app.route('/test', methods=['GET'])
 def test():
