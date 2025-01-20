@@ -8,7 +8,7 @@ CORS(app, resources={
     r"/test": {
         "origins": [
             "http://localhost:5173",  # Development frontend
-            "https://your-production-domain.com"  # Production frontend
+            "https://us-east-1.console.aws.amazon.com/amplify/apps/d1kze5vw3hqljr/overview"  # Production frontend
         ],
         "methods": ["GET"],
         "allow_headers": ["Content-Type", "Authorization"],
