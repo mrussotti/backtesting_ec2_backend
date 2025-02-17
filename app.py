@@ -8,8 +8,8 @@ import base64
 
 app = Flask(__name__)
 
-# Uncomment below for local dev
-CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
+CORS(app, resources={r"/*": {"origins": "https://x91quab646.execute-api.us-east-1.amazonaws.com"}})# Uncomment below for local dev
+# CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
 
 @app.route('/test', methods=['GET'])
 def test():
